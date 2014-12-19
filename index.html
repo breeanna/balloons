@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+	<head>
+		<title> B A L L O O N S </title>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			$(document).ready(function()	{
+
+				$("#enter").click(function()	{
+						console.log("Whoa!");
+					$("#enter").addClass("gone");
+				});
+
+				$("#blue").click(function()	{
+						console.log("oops");
+					$("#blue").removeClass("front");
+					$("#blue").addClass("hidden");
+					$("#poppedblue").removeClass("hidden");
+					$("#poppedblue").addClass("front");
+				});
+				$("#greyblue").click(function()	{
+					console.log("blue");
+					$("#greyblue").addClass("hidden");
+					$("#blue").addClass("front");
+				});
+				
+				$("#red").click(function()	{
+						console.log("oops");
+					$("#red").removeClass("front");
+					$("#red").addClass("hidden");
+					$("#poppedred").removeClass("hidden");
+					$("#poppedred").addClass("front");
+				});
+				$("#greyred").click(function()	{
+					console.log("red");
+					$("#greyred").addClass("hidden");
+					$("#red").addClass("front");
+				});
+
+				$("#yellow").click(function()	{
+						console.log("oops");
+					$("#yellow").removeClass("front");
+					$("#yellow").addClass("hidden");
+					$("#poppedyellow").removeClass("hidden");
+					$("#poppedyellow").addClass("front");
+				});
+				$("#greyyellow").click(function()	{
+					console.log("yellow");
+					$("#greyyellow").addClass("hidden");
+					$("#yellow").addClass("front");
+				});
+				
+				$("#greywhite").click(function()	{
+					console.log("white");
+					$("#greywhite").addClass("hidden");
+					$("#white").addClass("front");
+					$("#needle").removeClass("hidden");
+				});
+				$("#white").click(function()	{
+						console.log("grey");
+					$("#greywhite").removeClass("hidden");
+					$("#white").removeClass("front");
+					$("#needle").addClass("hidden");
+				});
+			});
+
+		</script>
+		<style>
+		 /*S    T     Y     L     E     S*/
+		 	@import url(http://fonts.googleapis.com/css?family=Parisienne);
+			#enter{
+				position:fixed;
+				min-height:100%;
+				min-width:100%;
+				background-image:url(css/finger.jpg);
+				background-size: 100%;	
+				background-position: center 25%;
+				left:0;
+				top:0;
+				z-index:3;
+			}
+			p {
+				position:absolute;
+				right:17%;
+				bottom:3%;
+				font-family: "Parisienne", cursive;
+				color:white;
+				font-size:3em;
+			}
+
+			
+			.color, .grey, div[role=popped]{
+				height:300px;
+				width:300px;
+				background-size: 300px;
+				float:left;
+				margin:0;
+				background-repeat: no-repeat;
+				position:relative;
+
+			}
+
+			#colorballoon, #greyballoon, #poppedballoon{
+				height: 400px;
+				min-width:1240px;
+				position:absolute;
+				margin-left:20%;
+				top:15%;
+			}
+	/*B   A   L   L   O   O   N   S*/
+
+			#blue	{
+				background-image:url(css/blue.png);
+
+			}
+
+			#red	{
+				background-image:url(css/red.png);
+			}
+
+			#yellow	{
+				background-image:url(css/yellow.png);
+			}
+
+			#white	{
+				background-image:url(css/white.png)
+			}
+
+			#greyblue	{
+				background-image:url(css/grey-blue.png);
+			}
+
+			#greyred	{
+				background-image:url(css/grey-red.png);
+			}
+
+			#greyyellow	{
+				background-image:url(css/grey-yellow.png);
+			}
+
+			#greywhite	{
+				background-image:url(css/grey-white.png)
+			}
+
+			#poppedblue	{
+				background-image:url(css/popped-blue.png);
+			}
+
+			#poppedred	{
+				background-image:url(css/popped-red.png);
+			}
+
+			#poppedyellow	{
+				background-image:url(css/popped-yellow.png);
+			}
+
+			#poppedwhite	{
+				background-image:url(css/white.png)
+			}
+
+		/*n   e   e   d   l   e   */
+		#needle	{
+			background-image: url(css/needle.png);
+			background-repeat: no-repeat;
+			background-size: 200px;
+				height: 200px;
+				position:relative;
+				margin-left:50%;
+				top:500px;
+
+		}
+			/*invisible*/
+			.hidden	{
+				visibility:hidden;
+			}
+			.gone	{
+				display:none;
+			}
+			.front	{
+				z-index:4;
+			}
+		</style>
+
+	</head>
+	<body>
+		
+		<div id="enter">
+			<p>enter here</p>
+		</div>
+		<section id="poppedballoon">
+			<div id="poppedblue" class="hidden" role="popped">
+			</div>
+			<div id="poppedred" class="hidden" role="popped">
+			</div>
+			<div id="poppedyellow" class="hidden" role="popped">
+			</div>
+			<div id="poppedwhite" class="hidden" role="popped">
+			</div>
+		</section>
+		<section id="colorballoon">
+			<div id="blue" class="color">
+			</div>
+			<div id="red" class="color">
+			</div>
+			<div id="yellow" class="color">
+			</div>
+			<div id="white" class="color">
+			</div>
+		</section>
+		<section id="greyballoon">
+			<div id="greyblue" class="grey">
+			</div>
+			<div id="greyred" class="grey">
+			</div>
+			<div id="greyyellow" class="grey">
+			</div>
+			<div id="greywhite" class="grey">
+			</div>
+		</section>
+		<div id="needle" class="hidden" >
+		</div>
+	</body>
+
+</html>
